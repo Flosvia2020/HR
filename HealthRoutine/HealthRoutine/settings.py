@@ -39,16 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'routine.apps.RoutineConfig',
     'rest_framework',
-    # 'user_edit',
+    'user_edit',
     'login_system',
 ]
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-    ]
+    ],
 }
 
 MIDDLEWARE = [

@@ -3,20 +3,17 @@ from django.core.mail import EmailMessage
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny,IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from .models import User
 from django.http import JsonResponse
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from six import text_type
-from django.contrib import messages
 from django.contrib.sites.shortcuts import get_current_site
 import json
 import bcrypt
-import jwt
-from django.conf import settings
-from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth import login, logout
 
 @api_view(["GET"])
 @csrf_exempt
@@ -71,10 +68,10 @@ def sign_up(request):
 def sign_in(request):
     payload = json.loads(request.body)
     try:
-        user=User.objects.get(username = payload["username"])
+        user = User.objects.get(username=payload["username"])
         if user is not None:
-            login(request,user)
-            return JsonResponse( {'success':user.id}, safe=False,
+            login(request, user)
+            return JsonResponse({'success': user.id}, safe=False,
                                 status=status.HTTP_200_OK)
         return JsonResponse({'error': 'wrong input'}, safe=False,
                             status=status.HTTP_401_UNAUTHORIZED)
@@ -87,7 +84,6 @@ def sign_in(request):
     except Exception as e:
         return JsonResponse({'error': str(e)}, safe=False,
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 
 
 class AccountActivationTokenGenerator(PasswordResetTokenGenerator):
@@ -120,4 +116,3 @@ def verify(request, pk, token, mail=None):
     except Exception as e:
         return JsonResponse({'error': str(e)}, safe=False,
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-# git test
