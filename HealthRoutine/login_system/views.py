@@ -69,9 +69,12 @@ def sign_in(request):
     payload = json.loads(request.body)
     try:
         user = User.objects.get(username=payload["username"])
+        password=payload["password"]
         if user is not None:
-            login(request, user)
-            return JsonResponse({'success': user.id}, safe=False,
+            check_password=bcrypt.checkpw(password.encode('utf-8'),user.password.encode('utf-8'))
+            if check_password:
+                login(request, user)
+                return JsonResponse({'success': user.id}, safe=False,
                                 status=status.HTTP_200_OK)
         return JsonResponse({'error': 'wrong input'}, safe=False,
                             status=status.HTTP_401_UNAUTHORIZED)
