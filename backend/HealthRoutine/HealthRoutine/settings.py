@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'user_edit',
     'login_system',
+    'corsheaders',
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {
@@ -53,6 +56,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,6 +65,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 import json
 from django.core.exceptions import ImproperlyConfigured
@@ -86,7 +94,9 @@ ROOT_URLCONF = 'HealthRoutine.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'frontend', 'build'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -97,6 +107,10 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'frontend', 'build', 'static')
 ]
 
 WSGI_APPLICATION = 'HealthRoutine.wsgi.application'
