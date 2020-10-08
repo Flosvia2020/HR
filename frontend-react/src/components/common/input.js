@@ -35,8 +35,8 @@ export const SmallInput = styled(LargeInput)`
 `;
 
 export const NoneBorderLabelInput = styled(SmallInput)`
-  width: 140px;
-  height: 20px;
+  width: 90%;
+  height: 80px;
   border: none;
   outline: none;
 `;
@@ -48,7 +48,9 @@ export const NoneBorderLargeInput = styled(LargeInput)`
 `;
 
 export const StretchInput = styled(LargeInput)`
-  width: 100%;
+  width: 90%;
+  height: 200px;
+  margin: 10px;
 `;
 
 export const FullInput = styled(LargeInput).attrs({

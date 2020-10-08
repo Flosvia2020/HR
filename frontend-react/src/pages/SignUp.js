@@ -14,34 +14,44 @@ const LoginWrapper = styled.div`
   background-color: #fafafa;
 `;
 
+export const AlertWrapper = styled.div`
+  margin-left: 28%;
+  height: 499px;
+  display: flex;
+`;
+
 const StyledInputLabel = styled(InputLabel)`
   margin-bottom: 5px;
 `;
 
 export const SignUp = () => {
-  const [email, emailValue] = useState("");
+  const [id, idValue] = useState("");
   const [password, passwordValue] = useState("");
+  const [email, emailValue] = useState("");
 
-  const onEmailChanged = (e) => {
-    emailValue(e.target.value);
+  const onIdChanged = (e) => {
+    idValue(e.target.value);
   };
 
   const onPasswordChanged = (e) => {
     passwordValue(e.target.value);
   };
+  const onEmailChanged = (e) => {
+    emailValue(e.target.value);
+  };
 
   const onLoginButtonClicked = () => {
-    console.log(password, email); // 연동
+    console.log(password, id, email); // 연동
   };
   return (
     <div>
       <LoginWrapper>
-        <StyledInputLabel htmlFor="email">이메일</StyledInputLabel>
+        <StyledInputLabel htmlFor="id">ID</StyledInputLabel>
         <LargeInput
-          id="email"
+          id="id"
           type="text"
-          placeholder="이메일"
-          onChange={onEmailChanged}
+          placeholder="아이디"
+          onChange={onIdChanged}
         />
         <StyledInputLabel htmlFor="password">비밀번호</StyledInputLabel>
         <LargeInput
@@ -50,14 +60,14 @@ export const SignUp = () => {
           placeholder="비밀번호"
           onChange={onPasswordChanged}
         />
-        <StyledInputLabel htmlFor="password">비밀번호 확인</StyledInputLabel>
+        <StyledInputLabel htmlFor="email">email</StyledInputLabel>
         <LargeInput
-          id="password"
-          type="password"
-          placeholder="비밀번호"
-          onChange={onPasswordChanged}
+          id="email"
+          type="text"
+          placeholder="email"
+          onChange={onEmailChanged}
         />
-        <MediumBtn onClick={onLoginButtonClicked}>로그인</MediumBtn>
+        <MediumBtn onClick={onLoginButtonClicked}>회원가입</MediumBtn>
       </LoginWrapper>
     </div>
   );

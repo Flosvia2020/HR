@@ -25,11 +25,11 @@ const StyledInputLabel = styled(InputLabel)`
 `;
 
 export const Login = () => {
-  const [email, emailValue] = useState("");
+  const [id, idValue] = useState("");
   const [password, passwordValue] = useState("");
 
-  const onEmailChanged = (e) => {
-    emailValue(e.target.value);
+  const onIdChanged = (e) => {
+    idValue(e.target.value);
   };
 
   const onPasswordChanged = (e) => {
@@ -37,17 +37,17 @@ export const Login = () => {
   };
 
   const onLoginButtonClicked = () => {
-    console.log(password, email); // 연동
+    console.log(password, id); // 연동
   };
   return (
     <div>
       <LoginWrapper>
-        <StyledInputLabel htmlFor="email">이메일</StyledInputLabel>
+        <StyledInputLabel htmlFor="id">ID</StyledInputLabel>
         <LargeInput
-          id="email"
+          id="id"
           type="text"
-          placeholder="이메일"
-          onChange={onEmailChanged}
+          placeholder="아이디"
+          onChange={onIdChanged}
         />
         <StyledInputLabel htmlFor="password">비밀번호</StyledInputLabel>
         <LargeInput

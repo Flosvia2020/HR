@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { MediumText, BoldText } from "../components/common/text";
+import { MediumText, BoldText } from "../common/text";
+
+import { ReactComponent as More } from "../../icons/More.svg";
 
 export const BoxWrapper = styled.div`
   margin: 10px;
@@ -28,7 +30,7 @@ const ListContents = ({ list }) => {
   );
 };
 
-export const ListBox = ({ list }) => {
+const ListBox = ({ list }) => {
   return (
     <div>
       <BoxWrapper>
@@ -38,3 +40,5 @@ export const ListBox = ({ list }) => {
     </div>
   );
 };
+
+export default ListBox;

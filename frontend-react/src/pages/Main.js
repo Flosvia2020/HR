@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import respone from "../dummies/data.json";
+import PerfectScrollbar from "react-perfect-scrollbar";
 
-import { Info } from "../components/info";
+import Info from "../components/main/info";
 import ChangeToKg from "../components/skill/changeToKg";
 import ChangeToPound from "../components/skill/changeToPound";
 
-const ListWrapper = styled.div`
+const ListWrapper = styled(PerfectScrollbar)`
   border: 1px solid #dddddd;
   box-sizing: border-box;
   border-radius: 4px;
-  height: 95%;
+  height: 95vh;
   width: 550px;
   margin: 10px;
   padding: 50px;
@@ -18,6 +19,8 @@ const ListWrapper = styled.div`
   flex-direction: column-reverse;
   position: absolute;
   right: 250px;
+  overflow: hidden;
+  flex: 1;
 `;
 const SkillsBox = styled.div`
   align-items: center;
