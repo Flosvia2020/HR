@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { MediumBtn } from "../components/common/button";
-import { MediumInput, InputLabel } from "../components/common/input";
+import { InputLabel, LargeInput } from "../components/common/input";
 
 const LoginWrapper = styled.div`
   width: 400px;
@@ -14,15 +14,50 @@ const LoginWrapper = styled.div`
   background-color: #fafafa;
 `;
 
+const StyledInputLabel = styled(InputLabel)`
+  margin-bottom: 5px;
+`;
+
 export const SignUp = () => {
+  const [email, emailValue] = useState("");
+  const [password, passwordValue] = useState("");
+
+  const onEmailChanged = (e) => {
+    emailValue(e.target.value);
+  };
+
+  const onPasswordChanged = (e) => {
+    passwordValue(e.target.value);
+  };
+
+  const onLoginButtonClicked = () => {
+    console.log(password, email); // 연동
+  };
   return (
     <div>
       <LoginWrapper>
-        <InputLabel>아이디</InputLabel>
-        <MediumInput />
-        <InputLabel>비밀번호</InputLabel>
-        <MediumInput />
-        <MediumBtn size="200px">회원가입</MediumBtn>
+        <StyledInputLabel htmlFor="email">이메일</StyledInputLabel>
+        <LargeInput
+          id="email"
+          type="text"
+          placeholder="이메일"
+          onChange={onEmailChanged}
+        />
+        <StyledInputLabel htmlFor="password">비밀번호</StyledInputLabel>
+        <LargeInput
+          id="password"
+          type="password"
+          placeholder="비밀번호"
+          onChange={onPasswordChanged}
+        />
+        <StyledInputLabel htmlFor="password">비밀번호 확인</StyledInputLabel>
+        <LargeInput
+          id="password"
+          type="password"
+          placeholder="비밀번호"
+          onChange={onPasswordChanged}
+        />
+        <MediumBtn onClick={onLoginButtonClicked}>로그인</MediumBtn>
       </LoginWrapper>
     </div>
   );

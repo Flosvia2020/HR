@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { ListBox } from "../components/ListBox";
 
 export const InfoWrapper = styled.div`
-  display: flex;
   margin: 10px;
+  display: flex;
+  flex-direction: column-reverse;
 `;
 
 export const Info = ({ data }) => {

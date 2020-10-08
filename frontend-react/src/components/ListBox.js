@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { MediumText, BoldText } from "../components/common/text";
 
 export const BoxWrapper = styled.div`
-  display: block;
   margin: 10px;
   border: 1px solid #dddddd;
+  width: 400px;
 `;
 
 const ListTitle = ({ title }) => {
@@ -21,7 +21,7 @@ const ListContents = ({ list }) => {
     <div>
       {list.map((item) => (
         <MediumText size="12">
-          {item.name} + {item.reps} + {item.sets}
+          {item.name}/{item.reps}time/{item.sets}reps
         </MediumText>
       ))}
     </div>
