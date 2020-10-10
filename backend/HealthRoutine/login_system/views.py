@@ -43,7 +43,6 @@ def send_mail(request, pk):
     email.send()
     return JsonResponse({'success': '성공!'})
 
-
 @api_view(["POST"])
 @csrf_exempt
 @permission_classes([AllowAny])

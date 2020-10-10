@@ -20,6 +20,7 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
+# swagger 설정
 schema_url_patterns = [
     path('', include('routine.urls')),
     path('', include('user_edit.urls')),
