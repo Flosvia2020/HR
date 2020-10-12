@@ -20,5 +20,5 @@ export const Li = styled.li`
 
 export const DropDownListContainer = styled("div")`
   position: absolute;
-  margin: 0px 0px 0px 130px;
+  margin: 0px 260px 0px 0px;
 `;
