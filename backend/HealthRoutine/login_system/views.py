@@ -47,6 +47,7 @@ def send_mail(request, pk):
 @csrf_exempt
 @permission_classes([AllowAny])
 def sign_up(request):
+    print(request)
     payload = json.loads(request.body)
     try:
         user = User.objects.create(
