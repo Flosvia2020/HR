@@ -31,6 +31,7 @@ def sign_out(request):
 
 
 def send_mail(request, pk):
+    print(pk)
     current_site = get_current_site(request)
     pk = force_text(urlsafe_base64_decode(pk))
     user = User.objects.get(id=pk)
@@ -40,14 +41,15 @@ def send_mail(request, pk):
                                                           urlsafe_base64_encode(force_bytes(user.pk)), token)
     email = EmailMessage('HR 인증', content, to=[user.email])
     EmailMessage()
+    print("mail send")
     email.send()
+    print("sssssssssssssssssssssssssssss")
     return JsonResponse({'success': '성공!'})
 
 @api_view(["POST"])
 @csrf_exempt
 @permission_classes([AllowAny])
 def sign_up(request):
-    print(request)
     payload = json.loads(request.body)
     try:
         user = User.objects.create(
@@ -58,11 +60,13 @@ def sign_up(request):
                                    bcrypt.gensalt()).decode("UTF-8")
         )
         pk = urlsafe_base64_encode(force_bytes(user.id))
-        send_mail(request._request, pk)
+        send_mail(request, pk)
         return JsonResponse({'success': user.id}, safe=False, status=status.HTTP_201_CREATED)
     except ObjectDoesNotExist as e:
+        print(str(e))
         return JsonResponse({'error': str(e)}, safe=False, status=status.HTTP_404_NOT_FOUND)
     except Exception as e:
+        print(str(e))
         return JsonResponse({'error': str(e)}, safe=False,
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
