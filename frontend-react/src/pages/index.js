@@ -11,7 +11,7 @@ export const Index = () => {
       <Router>
         <Route exact path="/main" component={Main} />
         <Route path="/login" component={Login} />
-        <Route path="/signp" component={SignUp} />
+        <Route path="/signup" component={SignUp} />
         <Route path="/mypage" component={MyPage} />
       </Router>
     </div>
