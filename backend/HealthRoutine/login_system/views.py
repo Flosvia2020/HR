@@ -41,10 +41,8 @@ def send_mail(request, pk):
                                                           urlsafe_base64_encode(force_bytes(user.pk)), token)
     email = EmailMessage('HR 인증', content, to=[user.email])
     EmailMessage()
-    print("mail send")
     email.send()
-    print("sssssssssssssssssssssssssssss")
-    return JsonResponse({'success': '성공!'})
+    return JsonResponse({'status': 'success'})
 
 @api_view(["POST"])
 @csrf_exempt

@@ -14,7 +14,6 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -72,28 +71,22 @@ CORS_ORIGIN_WHITELIST = (
 import json
 from django.core.exceptions import ImproperlyConfigured
 
-secret_file = os.path.join(BASE_DIR, 'secret.json')
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-with open(secret_file) as f:
-    secrets = json.loads(f.read())
+from . import my_settings
 
-
-def get_secret(setting, secrets=secrets):
-    try:
-        return secrets[setting]
-    except KeyError:
-        error_msg = "Set the {} environment variable".format(setting)
-        raise ImproperlyConfigured(error_msg)
-
+DATABASES = my_settings.DATABASES
 
 AUTH_USER_MODEL = 'login_system.User'
 EMAIL_HOST_USER = 'healthroutine1014@gmail.com'
-EMAIL_HOST_PASSWORD = get_secret("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_PASSWORD = my_settings.EMAIL_HOST_PASSWORD
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
 
-SECRET_KEY = get_secret("SECRET_KEY")
+SECRET_KEY = my_settings.SECRET_KEY
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
@@ -123,12 +116,6 @@ STATICFILES_DIR = [
 
 WSGI_APPLICATION = 'HealthRoutine.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-from . import my_settings
-
-DATABASES = my_settings.DATABASES
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
