@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import { MediumBtn } from "../components/common/button";
 import { InputLabel, LargeInput } from "../components/common/input";
@@ -20,6 +21,20 @@ export const AlertWrapper = styled.div`
   display: flex;
 `;
 
+function loginUser(user) {
+    const config={
+        method:"POST",
+        "Content-Type": "application/json"
+    }
+    axios.post('/signin/',user,config)
+        .then(response => {
+            alert(response);
+        }) // SUCCESS
+        .catch(response => {
+            alert(response);
+        }); // ERROR
+};
+
 const StyledInputLabel = styled(InputLabel)`
   margin-bottom: 5px;
 `;
@@ -37,7 +52,11 @@ export const Login = () => {
   };
 
   const onLoginButtonClicked = () => {
-    console.log(password, id); // 연동
+    const user={
+            username:id,
+            password:password
+        }
+       loginUser(user)
   };
   return (
     <div>
@@ -56,7 +75,7 @@ export const Login = () => {
           placeholder="비밀번호"
           onChange={onPasswordChanged}
         />
-        <MediumBtn onClick={onLoginButtonClicked}>회원가입</MediumBtn>
+        <MediumBtn onClick={onLoginButtonClicked}>로그인</MediumBtn>
       </LoginWrapper>
     </div>
   );

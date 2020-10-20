@@ -26,7 +26,7 @@ const StyledInputLabel = styled(InputLabel)`
 `;
 
 
-function createUser(user) {
+function signupUser(user) {
     const config={
         method:"POST",
         "Content-Type": "application/json"
@@ -60,14 +60,14 @@ export const SignUp = () => {
         nicknameValue(e.target.value);
     }
 
-    const onLoginButtonClicked = () => {
+    const onSignupButtonClicked = () => {
         const user={
             username:id,
             name: nickname,
             email: email,
             password:password
         }
-       createUser(user)
+       signupUser(user)
     };
 
     return (
@@ -108,7 +108,7 @@ export const SignUp = () => {
                     placeholder="email"
                     onChange={onEmailChanged}
                 />
-                <MediumBtn onClick={onLoginButtonClicked}>회원가입</MediumBtn>
+                <MediumBtn onClick={onSignupButtonClicked()}>회원가입</MediumBtn>
             </LoginWrapper>
         </div>
     );
