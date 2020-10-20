@@ -65,17 +65,17 @@ export const MyPage = () => {
     emailValue(e.target.value);
   };
   const onsubmit = (id, password, email) => {
-    axios.post("api/mypage/userdata/update", {
+    axios.post("profile/update", {
       id,
       password,
       email,
     });
   };
   useEffect(() => {
-    axios.get("api/mypage/data").then((resp) => {
+    axios.get("profile/data").then((resp) => {
       setData(resp.data);
     });
-    axios.get("api/mypage/userdata").then((resp) => {
+    axios.get("profile/").then((resp) => {
       setUserData(resp.data);
     });
   });

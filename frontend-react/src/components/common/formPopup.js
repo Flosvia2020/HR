@@ -78,12 +78,20 @@ function FormPopup(props) {
     setDescription(e.target.value);
   };
 
-  const onHandler = (title, description) => {
-    axios.post("api/maindata/update", {
-      title,
-      description,
-    });
+  const onHandler = (title, description, post_id) => {
+    if (post_id) {
+      axios.post(`${post_id}/update/`, {
+        title,
+        description,
+      });
+    } else {
+      axios.post(`create/`, {
+        title,
+        description,
+      });
+    }
   };
+
   return (
     <Popup size={size}>
       <PopupHeader size={size}>

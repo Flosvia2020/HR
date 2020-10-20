@@ -44,7 +44,7 @@ export const Main = () => {
   };
 
   useEffect(() => {
-    axios.get("api/maindata").then((resp) => {
+    axios.get("list/").then((resp) => {
       setData(resp.data);
     });
   });

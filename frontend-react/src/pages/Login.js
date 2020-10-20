@@ -38,7 +38,7 @@ export const Login = () => {
   };
 
   const onLoginButtonClicked = () => {
-    axios.post("api/login", {
+    axios.post("signIn/", {
       id,
       password,
     });

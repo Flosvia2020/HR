@@ -43,7 +43,7 @@ export const SignUp = () => {
   const history = useHistory();
 
   const onLoginButtonClicked = () => {
-    axios.post("api/login", {
+    axios.post("signUp/", {
       id,
       password,
       email,
