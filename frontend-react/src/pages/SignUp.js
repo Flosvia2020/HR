@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import axios from "axios";
 import { MediumBtn } from "../components/common/button";
 import { InputLabel, LargeInput } from "../components/common/input";
+import { useHistory } from "react-router";
 
 const LoginWrapper = styled.div`
   width: 400px;
@@ -39,10 +40,24 @@ export const SignUp = () => {
   const onEmailChanged = (e) => {
     emailValue(e.target.value);
   };
+  const history = useHistory();
 
   const onLoginButtonClicked = () => {
-    console.log(password, id, email); // 연동
+    axios.post("api/login", {
+      id,
+      password,
+      email,
+    });
   };
+
+  useEffect(() => {
+    axios.get("api/signup/access").then((resp) => {
+      if (resp.data) {
+        history.push("/login");
+      }
+    });
+  });
+
   return (
     <div>
       <LoginWrapper>

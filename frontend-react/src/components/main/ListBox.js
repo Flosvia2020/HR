@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { MediumText, BoldText } from "../common/text";
-
+import axios from "axios";
 import { ReactComponent as More } from "../../icons/More.svg";
 import { Ul, Li, DropDownListContainer } from "../common/dropdown";
 import IsEditPopup from "./isEdit";
@@ -61,6 +61,15 @@ const ListBox = ({ list }) => {
   const onClickopen = () => {
     setModifiedModalVisible(true);
   };
+  const onClosePopup = () => {
+    setModifiedModalVisible(false);
+    toggling();
+  };
+  const onDelete = (id) => {
+    axios.post("api/maindata/delete", {
+      id,
+    });
+  };
   return (
     <div>
       <BoxWrapper>
@@ -71,9 +80,9 @@ const ListBox = ({ list }) => {
               <Ul>
                 <Li onClick={onClickopen}>변경</Li>
                 {ModifiedmodalVisible && (
-                  <IsEditPopup visible={ModifiedmodalVisible}></IsEditPopup>
+                  <IsEditPopup isEdit onClose={onClosePopup}></IsEditPopup>
                 )}
-                <Li>삭제</Li>
+                <Li onClick={onDelete}>삭제</Li>
               </Ul>
             </DropDownListContainer>
           )}

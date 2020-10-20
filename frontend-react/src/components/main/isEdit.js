@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { LargeFormPopup } from "../common/formPopup";
 const Container = styled.div`
@@ -7,15 +7,10 @@ const Container = styled.div`
 
 const SectionContainer = styled.div`
   margin: 0 30px;
+  z-index: 5;
 `;
 
-function IsEditPopup({ isEdit, popup }) {
-  const [memberEditPopupVisible, setMemberEditPopupVisible] = useState(false);
-
-  const onClose = () => {
-    setMemberEditPopupVisible(false);
-  };
-
+function IsEditPopup({ isEdit, visible, onClose }) {
   const properties = {
     title: isEdit ? "변경" : "추가",
     leftButton: {
@@ -29,14 +24,12 @@ function IsEditPopup({ isEdit, popup }) {
 
   return (
     <>
-      {memberEditPopupVisible ? (
-        <LargeFormPopup
-          properties={{
-            ...properties,
-            content: <Container></Container>,
-          }}
-        ></LargeFormPopup>
-      ) : null}
+      <LargeFormPopup
+        properties={{
+          ...properties,
+          content: <Container></Container>,
+        }}
+      ></LargeFormPopup>
     </>
   );
 }

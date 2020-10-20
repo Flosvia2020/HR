@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import axios from "axios";
 import { MediumBtn } from "../components/common/button";
 import { InputLabel, LargeInput } from "../components/common/input";
+import { useHistory } from "react-router";
 
 const LoginWrapper = styled.div`
   width: 400px;
@@ -37,8 +38,20 @@ export const Login = () => {
   };
 
   const onLoginButtonClicked = () => {
-    console.log(password, id); // 연동
+    axios.post("api/login", {
+      id,
+      password,
+    });
   };
+  const history = useHistory();
+
+  useEffect(() => {
+    axios.get("api/login/access").then((resp) => {
+      if (resp.data) {
+        history.push("/main");
+      }
+    });
+  });
   return (
     <div>
       <LoginWrapper>
@@ -56,7 +69,7 @@ export const Login = () => {
           placeholder="비밀번호"
           onChange={onPasswordChanged}
         />
-        <MediumBtn onClick={onLoginButtonClicked}>회원가입</MediumBtn>
+        <MediumBtn onClick={onLoginButtonClicked}>로그인</MediumBtn>
       </LoginWrapper>
     </div>
   );
