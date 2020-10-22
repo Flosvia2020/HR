@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
-
+import client from "../client";
 import { MediumBtn } from "../components/common/button";
 import { InputLabel, LargeInput } from "../components/common/input";
 
@@ -26,7 +25,7 @@ function loginUser(user) {
         method:"POST",
         "Content-Type": "application/json"
     }
-    axios.post('/signin/',user,config)
+    client.post('/signin/',user,config)
         .then(response => {
             alert(response);
         }) // SUCCESS

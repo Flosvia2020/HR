@@ -10,9 +10,9 @@ export const Index = () => {
     <div>
       <Router>
         <Route exact path="/main" component={Main} />
-        <Route path="/login" component={Login} />
+        <Route path="/signin" component={Login} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/mypage" component={MyPage} />
+        <Route path="/profile" component={MyPage} />
       </Router>
     </div>
   );

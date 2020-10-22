@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import axios from "axios";
 
 import {MediumBtn} from "../components/common/button";
 import {InputLabel, LargeInput} from "../components/common/input";
+import client from "../client";
 
 const LoginWrapper = styled.div`
   width: 400px;
@@ -27,11 +27,11 @@ const StyledInputLabel = styled(InputLabel)`
 
 
 function signupUser(user) {
-    const config={
-        method:"POST",
+    const config = {
+        method: "POST",
         "Content-Type": "application/json"
     }
-    axios.post('/signup/',user,config)
+    client.post('/signup/', user, config)
         .then(response => {
             alert(response);
         }) // SUCCESS
@@ -61,13 +61,13 @@ export const SignUp = () => {
     }
 
     const onSignupButtonClicked = () => {
-        const user={
-            username:id,
+        const user = {
+            username: id,
             name: nickname,
             email: email,
-            password:password
+            password: password
         }
-       signupUser(user)
+        signupUser(user)
     };
 
     return (
@@ -108,7 +108,9 @@ export const SignUp = () => {
                     placeholder="email"
                     onChange={onEmailChanged}
                 />
-                <MediumBtn onClick={onSignupButtonClicked()}>회원가입</MediumBtn>
+                <MediumBtn onClick={() => {
+                    onSignupButtonClicked()
+                }}>회원가입</MediumBtn>
             </LoginWrapper>
         </div>
     );

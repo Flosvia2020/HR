@@ -6,6 +6,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import Info from "../components/main/info";
 import ChangeToKg from "../components/skill/changeToKg";
 import ChangeToPound from "../components/skill/changeToPound";
+import client from "../client";
 
 const ListWrapper = styled(PerfectScrollbar)`
   border: 1px solid #dddddd;
@@ -32,8 +33,20 @@ const SkillsBox = styled.div`
   top: 25%;
   left: 50px;
 `;
+let list;
+client.get('/main/')
+    .then(response => {
+        console.log(response.data.posts);
+        list=response.data.posts;
+        alert(response);
+    }) // SUCCESS
+    .catch(response => {
+        alert(response);
+    }); // ERROR
+
 export const Main = () => {
-  const list = respone.data;
+  //const list = posts;
+  //console.log(list);
   return (
     <div>
       <SkillsBox>
@@ -41,7 +54,7 @@ export const Main = () => {
         <ChangeToPound />
       </SkillsBox>
       <ListWrapper>
-        {list.map((item) => (
+         {list.map((item) => (
           <Info data={item}></Info>
         ))}
       </ListWrapper>
