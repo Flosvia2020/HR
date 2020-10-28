@@ -31,7 +31,6 @@ def sign_out(request):
 
 
 def send_mail(request, pk):
-    print(pk)
     current_site = get_current_site(request)
     pk = force_text(urlsafe_base64_decode(pk))
     user = User.objects.get(id=pk)

@@ -9,10 +9,10 @@ export const Index = () => {
   return (
     <div>
       <Router>
+          <Route exact  path="/signup" component={SignUp} />
         <Route exact path="/main" component={Main} />
-        <Route path="/signin" component={Login} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/profile" component={MyPage} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/mypage" component={MyPage} />
       </Router>
     </div>
   );

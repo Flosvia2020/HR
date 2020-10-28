@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import client from "../client";
+
+import axios from "axios";
 import { MediumBtn } from "../components/common/button";
 import { InputLabel, LargeInput } from "../components/common/input";
+import { useHistory } from "react-router";
 
 const LoginWrapper = styled.div`
   width: 400px;
@@ -13,50 +15,39 @@ const LoginWrapper = styled.div`
   margin: auto;
   background-color: #fafafa;
 `;
-
 export const AlertWrapper = styled.div`
   margin-left: 28%;
   height: 499px;
   display: flex;
 `;
-
-function loginUser(user) {
-    const config={
-        method:"POST",
-        "Content-Type": "application/json"
-    }
-    client.post('/signin/',user,config)
-        .then(response => {
-            alert(response);
-        }) // SUCCESS
-        .catch(response => {
-            alert(response);
-        }); // ERROR
-};
-
 const StyledInputLabel = styled(InputLabel)`
   margin-bottom: 5px;
 `;
-
 export const Login = () => {
   const [id, idValue] = useState("");
   const [password, passwordValue] = useState("");
-
   const onIdChanged = (e) => {
     idValue(e.target.value);
   };
-
   const onPasswordChanged = (e) => {
     passwordValue(e.target.value);
   };
 
   const onLoginButtonClicked = () => {
-    const user={
-            username:id,
-            password:password
-        }
-       loginUser(user)
+    axios.post("/login", {
+      id,
+      password,
+    });
   };
+  const history = useHistory();
+
+  useEffect(() => {
+    axios.get("api/login/access").then((resp) => {
+      if (resp.data) {
+        history.push("/main");
+      }
+    });
+  });
   return (
     <div>
       <LoginWrapper>

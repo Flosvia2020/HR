@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { MediumButton } from "./button";
 import { NoneBorderLabelInput, StretchInput } from "../common/input";
 
 const Popup = styled.div`
   width: 400px;
-  z-index: 1;
+  z-index: 20;
   height: 300px;
   background-color: #fff;
   box-shadow: -20px 4px 34px rgba(0, 0, 0, 0.09);
@@ -15,7 +16,6 @@ const Popup = styled.div`
   justify-content: start;
   align-items: center;
 `;
-
 const PopupHeader = styled.div`
   width: 100%;
   display: flex;
@@ -24,7 +24,6 @@ const PopupHeader = styled.div`
   flex: 0 0 50px;
   border-bottom: 1px solid #ddd;
 `;
-
 const PopupTitle = styled.div`
   flex: 1;
   padding: 0px 30px;
@@ -32,7 +31,6 @@ const PopupTitle = styled.div`
   font-size: 18px;
   font-weight: bold;
 `;
-
 const PopupContent = styled(PerfectScrollbar)`
   width: ${(props) => (props.size ? `${props.size}px` : "fit-content")};
   flex: 1;
@@ -40,7 +38,6 @@ const PopupContent = styled(PerfectScrollbar)`
   resize: none;
   border: none;
 `;
-
 const PopupFooter = styled.div`
   width: 100%;
   flex: 0 0 80px;
@@ -49,7 +46,6 @@ const PopupFooter = styled.div`
   justify-content: flex-end;
   align-items: center;
 `;
-
 const LeftButton = styled.button`
   width: 90px;
   height: 50px;
@@ -67,22 +63,21 @@ const LeftButton = styled.button`
 function FormPopup(props) {
   const { properties, size } = props;
   const [title, setTitle] = useState("");
-  const [decription, setDecription] = useState("");
+  const [description, setDescription] = useState("");
 
   const onTitleChanged = (e) => {
     setTitle(e.target.value);
   };
 
   const onDescriptionChanged = (e) => {
-    setDecription(e.target.value);
+    setDescription(e.target.value);
   };
 
-  const onSubmit = () => {
-    console.log(title, decription); // 연동
-  };
-
-  const onClose = () => {
-    console.log("닫기");
+  const onHandler = (title, description) => {
+    axios.post("api/maindata/update", {
+      title,
+      description,
+    });
   };
   return (
     <Popup size={size}>
@@ -108,29 +103,28 @@ function FormPopup(props) {
           </LeftButton>
         )}
         {properties.rightButton && (
-          <MediumButton onClick={onSubmit} style={{ marginRight: "30px" }}>
+          <MediumButton
+            onClick={() => {
+              onHandler(title, description);
+            }}
+            style={{ marginRight: "30px" }}
+          >
             {properties.rightButton.title}
           </MediumButton>
         )}
-      </PopupFooter>
+        </PopupFooter>
     </Popup>
   );
 }
-
 export function LargeFormPopup(props) {
   const { properties } = props;
-
   return <FormPopup size={760} properties={properties} />;
 }
-
 export function ContentFitFormPopup(props) {
   const { properties } = props;
-
   return <FormPopup properties={properties} />;
 }
-
 export function SmallFormPopup(props) {
   const { properties } = props;
-
   return <FormPopup size={520} properties={properties} />;
 }
