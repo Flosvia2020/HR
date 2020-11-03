@@ -5,7 +5,6 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import Info from "../components/main/info";
 import { MediumBtn } from "../components/common/button";
 import { InputLabel, LargeInput } from "../components/common/input";
-import { useHistory } from "react-router";
 import respone from "../dummies/data.json";
 
 const ListWrapper = styled(PerfectScrollbar)`

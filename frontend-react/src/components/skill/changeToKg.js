@@ -15,8 +15,8 @@ const StyledInputLabel = styled(InputLabel)`
   margin-bottom: 5px;
 `;
 const ChangeToKg = () => {
-  const [value, setValue] = useState("");
-  const [result, setResult] = useState("");
+  const [value, setValue] = useState(0);
+  const [result, setResult] = useState(0);
 
   useEffect(() => {
     setResult(Math.ceil(value / 2.2));
@@ -24,13 +24,21 @@ const ChangeToKg = () => {
   const onChange = (e) => {
     setValue(e.target.value);
   };
+
+  const messageTost = (result) => {
+    if(result > 10000000000){
+      return "로이더"
+    }else{
+      return result + "kg입니다"
+    }
+  }
   return (
     <div>
       <ContinerWrapper>
         pound -> kg<br></br>
         <StyledInputLabel htmlFor="value">몇 pound입니까</StyledInputLabel>
         <SmallInput id="value" onChange={onChange}></SmallInput>
-        {result}kg입니다.
+        {messageTost(result)}
       </ContinerWrapper>
     </div>
   );
