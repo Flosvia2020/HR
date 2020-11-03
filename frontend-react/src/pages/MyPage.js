@@ -65,11 +65,13 @@ export const MyPage = () => {
     emailValue(e.target.value);
   };
   const onsubmit = (id, password, email) => {
+  if(id){
     axios.post("profile/update", {
       id,
       password,
       email,
     });
+  }
   };
   useEffect(() => {
     axios.get("profile/data").then((resp) => {

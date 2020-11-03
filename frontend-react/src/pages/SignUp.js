@@ -42,12 +42,14 @@ export const SignUp = () => {
   };
   const history = useHistory();
 
-  const onLoginButtonClicked = () => {
-    axios.post("signUp/", {
-      id,
-      password,
-      email,
-    });
+  const onLoginButtonClicked = (id, password, email) => {
+    if(id){
+      axios.post("signUp/", {
+        id,
+        password,
+        email,
+      });
+    }
   };
 
   useEffect(() => {
@@ -82,7 +84,7 @@ export const SignUp = () => {
           placeholder="email"
           onChange={onEmailChanged}
         />
-        <MediumBtn onClick={onLoginButtonClicked}>회원가입</MediumBtn>
+        <MediumBtn onClick={ () => {onLoginButtonClicked(id, password, email)}}>회원가입</MediumBtn>
       </LoginWrapper>
     </div>
   );

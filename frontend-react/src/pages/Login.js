@@ -37,11 +37,13 @@ export const Login = () => {
     passwordValue(e.target.value);
   };
 
-  const onLoginButtonClicked = () => {
-    axios.post("signIn/", {
-      id,
-      password,
-    });
+  const onLoginButtonClicked = (id, password) => {
+    if(id) {
+      axios.post("signIn/", {
+        id,
+        password,
+      });
+    }
   };
   const history = useHistory();
 
@@ -69,7 +71,7 @@ export const Login = () => {
           placeholder="비밀번호"
           onChange={onPasswordChanged}
         />
-        <MediumBtn onClick={onLoginButtonClicked}>로그인</MediumBtn>
+        <MediumBtn onClick = { () => {onLoginButtonClicked(id, password)} }>로그인</MediumBtn>
       </LoginWrapper>
     </div>
   );
