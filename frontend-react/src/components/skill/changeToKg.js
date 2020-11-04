@@ -37,7 +37,7 @@ const ChangeToKg = () => {
       <ContinerWrapper>
         pound -> kg<br></br>
         <StyledInputLabel htmlFor="value">몇 pound입니까</StyledInputLabel>
-        <SmallInput id="value" onChange={onChange}></SmallInput>
+        <SmallInput id="value" type="number" onChange={onChange}></SmallInput>
         {messageTost(result)}
       </ContinerWrapper>
     </div>
