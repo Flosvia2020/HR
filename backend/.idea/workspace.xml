@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="03c4ec5f-adfc-4f47-9455-af236a18dadd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/HealthRoutine/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/HealthRoutine/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/login_system/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/login_system/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/login_system/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/login_system/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/login_system/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/login_system/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/routine/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/routine/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/routine/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/routine/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/routine/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/routine/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/routine/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/routine/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/user_edit/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/user_edit/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/user_edit/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/user_edit/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HealthRoutine/user_edit/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/HealthRoutine/user_edit/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="91ff3a36-649b-4b5b-bbd4-49e0824d73ab" />
+  <component name="ProjectId" id="1hdLrbksdukTZZ0snFnh54sfG8b" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03c4ec5f-adfc-4f47-9455-af236a18dadd" name="Default Changelist" comment="" />
+      <created>1600336224966</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600336224966</updated>
+      <workItem from="1600336227689" duration="1193000" />
+      <workItem from="1600337510989" duration="8859000" />
+      <workItem from="1600607356114" duration="1889000" />
+      <workItem from="1600610058548" duration="2428000" />
+      <workItem from="1600645572258" duration="1599000" />
+      <workItem from="1600692402464" duration="4390000" />
+      <workItem from="1600778531175" duration="3115000" />
+      <workItem from="1600848545671" duration="3154000" />
+      <workItem from="1600933194540" duration="655000" />
+      <workItem from="1601017608329" duration="3155000" />
+      <workItem from="1601279367946" duration="26000" />
+      <workItem from="1602056108733" duration="1085000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1601279393053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601279393053" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1600610166906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600610166906" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1602056888710">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1602056888710" />
+  </component>
+</project>
