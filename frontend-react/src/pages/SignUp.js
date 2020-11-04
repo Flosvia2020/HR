@@ -50,15 +50,14 @@ export const SignUp = () => {
         email,
       });
     }
-  };
-
-  useEffect(() => {
     axios.get("api/signup/access").then((resp) => {
       if (resp.data) {
         history.push("/login");
       }
     });
-  });
+  };
+
+
 
   return (
     <div>
