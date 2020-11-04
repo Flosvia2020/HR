@@ -44,16 +44,14 @@ export const Login = () => {
         password,
       });
     }
-  };
-  const history = useHistory();
-
-  useEffect(() => {
     axios.get("api/login/access").then((resp) => {
       if (resp.data) {
         history.push("/main");
       }
     });
-  });
+  };
+  const history = useHistory();
+
   return (
     <div>
       <LoginWrapper>
