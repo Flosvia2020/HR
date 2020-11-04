@@ -20,36 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10eb5bf7-a731-4651-baab-0aec83dae840" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend-react/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/common/button.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/common/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/common/formPopup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/common/input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/common/text.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/main/ListBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/main/info.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/main/isEdit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/popup/AddPopup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/popup/UserEdit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/popup/modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/skill/Plate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/skill/changeToKg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/components/skill/changeToPound.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/dummies/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/icons/More.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/pages/Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/pages/Main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/pages/MyPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/pages/SignUp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/src/pages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-react/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
