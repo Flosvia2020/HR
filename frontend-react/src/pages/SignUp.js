@@ -28,6 +28,7 @@ const StyledInputLabel = styled(InputLabel)`
 export const SignUp = () => {
   const [id, idValue] = useState("");
   const [password, passwordValue] = useState("");
+  const [name, nameValue] = useState("");
   const [email, emailValue] = useState("");
 
   const onIdChanged = (e) => {
@@ -37,30 +38,33 @@ export const SignUp = () => {
   const onPasswordChanged = (e) => {
     passwordValue(e.target.value);
   };
+  const onNameChanged = (e) => {
+    nameValue(e.target.value);
+  };
   const onEmailChanged = (e) => {
     emailValue(e.target.value);
   };
   const history = useHistory();
 
-  const onLoginButtonClicked = (id, password, email) => {
+  const onLoginButtonClicked = (id, password, name, email) => {
     if(id){
-      axios.post("signUp/", {
+      axios.post("http://10.156.146.197:8000/signup/", {
         id,
+        name,
         password,
         email,
-      });
+      }).then((resp)=> {
+        if(resp.data){
+          history.push("/login");
+        }
+      })
     }
-    axios.get("api/signup/access").then((resp) => {
-      if (resp.data) {
-        history.push("/login");
-      }
-    });
   };
-
-
 
   return (
     <div>
+
+      
       <LoginWrapper>
         <StyledInputLabel htmlFor="id">ID</StyledInputLabel>
         <LargeInput
@@ -76,6 +80,13 @@ export const SignUp = () => {
           placeholder="비밀번호"
           onChange={onPasswordChanged}
         />
+           <StyledInputLabel htmlFor="name">name</StyledInputLabel>
+        <LargeInput
+          id="name"
+          type="text"
+          placeholder="name"
+          onChange={onNameChanged}
+        />
         <StyledInputLabel htmlFor="email">email</StyledInputLabel>
         <LargeInput
           id="email"
@@ -83,7 +94,7 @@ export const SignUp = () => {
           placeholder="email"
           onChange={onEmailChanged}
         />
-        <MediumBtn onClick={ () => {onLoginButtonClicked(id, password, email)}}>회원가입</MediumBtn>
+        <MediumBtn onClick={ () => {onLoginButtonClicked(id, password,name, email)}}>회원가입</MediumBtn>
       </LoginWrapper>
     </div>
   );

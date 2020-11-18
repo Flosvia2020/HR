@@ -39,19 +39,18 @@ export const Login = () => {
 
   const onLoginButtonClicked = (id, password) => {
     if(id) {
-      axios.post("signIn/", {
-        id,
+      axios.post("http://10.156.146.197:8000/signin/", {
+        id, 
         password,
-      });
+      }).then((resp) => {
+        if(resp.data){
+          history.push("/main"); 
+        }
+      })
     }
-    axios.get("api/login/access").then((resp) => {
-      if (resp.data) {
-        history.push("/main");
-      }
-    });
   };
   const history = useHistory();
-
+  
   return (
     <div>
       <LoginWrapper>
